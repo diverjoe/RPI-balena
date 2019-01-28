@@ -17,4 +17,16 @@ datasources:
   # is_default: true
   version: 1
   editable: true
+- name: 'utsc_ds'
+  type: 'influxdb'
+  access: 'proxy'
+  org_id: 1
+  url: 'http://influxdb:8086'
+  database: 'utsc'
+  password: 'root'
+  user: 'root'
+  # <bool> enable/disable basic auth
+  # is_default: true
+  version: 1
+  editable: true  
   
