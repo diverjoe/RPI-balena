@@ -17,3 +17,16 @@ datasources:
   # is_default: true
   version: 1
   editable: true
+  
+  - name: 'aquaescape_ds'
+  type: 'influxdb'
+  access: 'proxy'
+  org_id: 1
+  url: 'http://influxdb:8086'
+  database: 'aquaescape'
+  password: 'root'
+  user: 'root'
+  # <bool> enable/disable basic auth
+  # is_default: true
+  version: 1
+  editable: true
