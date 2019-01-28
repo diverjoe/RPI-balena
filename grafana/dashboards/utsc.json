@@ -1802,7 +1802,7 @@
     "list": []
   },
   "time": {
-    "from": "now/d",
+    "from": "now-2d",
     "to": "now-0s"
   },
   "timepicker": {
@@ -1835,5 +1835,5 @@
   "timezone": "browser",
   "title": "1-Sensor",
   "uid": "K6HYLTigk",
-  "version": 15
+  "version": 16
 }
