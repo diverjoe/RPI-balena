@@ -77,12 +77,12 @@ module.exports = {
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
 		// JVA 2018-11-12: activated httpRoot
-    httpRoot: '/utsc',
+    httpRoot: '/',
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    //httpStatic: '/home/nol/node-red-static/',
+    httpStatic: '/data/static/',
 
     // Securing Node-RED
     // -----------------
