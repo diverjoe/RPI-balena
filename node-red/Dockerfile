@@ -5,7 +5,7 @@ USER root
 RUN apt-get update && apt-get install nano libi2c-dev i2c-tools
 USER node-red
 
-RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+#RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 RUN npm install node-red-contrib-resinio
 RUN npm install node-red-dashboard
