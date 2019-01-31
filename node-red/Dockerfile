@@ -19,6 +19,7 @@ RUN npm install node-red-contrib-mytimeout
 RUN npm install node-red-node-smooth
 RUN npm install node-red-contrib-bme280
 RUN npm install node-red-contrib-esplogin
+RUN npm install node-red-contrib-i2c
 
 
 COPY ./settings.js /data/settings.js
