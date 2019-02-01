@@ -3,6 +3,8 @@ volumes:
     node-red-data:
     node-red-test-data:
     influxdb-data:
+    mqtt-data;
+    mqtt-test-data:
 services:
   wifi-connect:
     build: ./wifi-connect
@@ -61,10 +63,14 @@ services:
     restart: always
   mqtt:
     image: panuwitp/mosquitto-arm
+    volumes:
+      - 'mqtt-data:/data'
     ports:
       - "1883:1883"
   mqtt-test:
     image: panuwitp/mosquitto-arm
+    volumes:
+      - 'mqtt-test-data:/data'
     ports:
       - "1884:1883"
   node-red:
