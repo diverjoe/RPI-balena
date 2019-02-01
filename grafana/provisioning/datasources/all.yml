@@ -17,7 +17,7 @@ datasources:
   # is_default: true
   version: 1
   editable: true
-- name: 'utsc_ds'
+- name: 'utsc'
   type: 'influxdb'
   access: 'proxy'
   org_id: 1
