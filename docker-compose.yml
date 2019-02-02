@@ -105,3 +105,4 @@ services:
     build: mqtt
     ports:
       - "1885:1883"
+    restart: always
