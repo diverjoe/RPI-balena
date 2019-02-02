@@ -64,7 +64,7 @@ services:
   mqtt:
     image: panuwitp/mosquitto-arm
     volumes:
-      - 'mqtt-data:/data'
+      - 'mqtt-data:/mosquitto'
     ports:
       - "1883:1883"
   mqtt-test:
