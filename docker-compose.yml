@@ -101,4 +101,7 @@ services:
        - "80:80"
        - "443:443"
     restart: always
-
+mosquitto:
+    build: mqtt
+    ports:
+      - "1885:1883"
