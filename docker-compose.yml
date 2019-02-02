@@ -98,10 +98,10 @@ services:
       - node-red
       - node-red-test
     ports:
-       - "80:80"
-       - "443:443"
+      - "80:80"
+      - "443:443"
     restart: always
-mosquitto:
+  mosquitto:
     build: mqtt
     ports:
       - "1885:1883"
