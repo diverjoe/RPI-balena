@@ -67,13 +67,13 @@ services:
       - 'mqtt-data:/mosquitto'
     ports:
       - "1883:1883"
-  mqtt-test:
-    image: panuwitp/mosquitto-arm
-    network_mode: "host"
-    volumes:
-      - 'mqtt-test-data:/data'
-    ports:
-      - "1884:1883"
+  # mqtt-test:
+    # image: panuwitp/mosquitto-arm
+    # network_mode: "host"
+    # volumes:
+      # - 'mqtt-test-data:/data'
+    # ports:
+      # - "1884:1883"
   node-red:
     build: node-red
     volumes:
@@ -83,17 +83,17 @@ services:
     depends_on:
         - mqtt
     restart: always
-  node-red-test:
-    build: node-red-test
-    privileged: true
-    network_mode: "host"
-    volumes:
-       - 'node-red-test-data:/data'
-    ports:
-       - "1882:1880"
-    depends_on:
-        - mqtt-test
-    restart: always
+  # node-red-test:
+    # build: node-red-test
+    # privileged: true
+    # network_mode: "host"
+    # volumes:
+       # - 'node-red-test-data:/data'
+    # ports:
+       # - "1882:1880"
+    # depends_on:
+        # - mqtt-test
+    # restart: always
   nginx:
     build : nginx
     depends_on:
