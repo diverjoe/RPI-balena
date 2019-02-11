@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 volumes:
     node-red-data:
     influxdb-data:
@@ -83,4 +83,3 @@ services:
       - "80:80"
       - "443:443"
     restart: always
-
