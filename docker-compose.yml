@@ -69,6 +69,7 @@ services:
       - "1883:1883"
   mqtt-test:
     image: panuwitp/mosquitto-arm
+    network_mode: "host"
     volumes:
       - 'mqtt-test-data:/data'
     ports:
@@ -84,6 +85,8 @@ services:
     restart: always
   node-red-test:
     build: node-red-test
+     privileged: true
+     network_mode: "host"
     volumes:
        - 'node-red-test-data:/data'
     ports:
