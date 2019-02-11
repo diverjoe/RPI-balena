@@ -1,10 +1,8 @@
 version: '2'
 volumes:
     node-red-data:
-    node-red-test-data:
     influxdb-data:
     mqtt-data:
-    mqtt-test-data:
 services:
   wifi-connect:
     build: ./wifi-connect
