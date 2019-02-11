@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 volumes:
     node-red-data:
     influxdb-data:
@@ -79,7 +79,6 @@ services:
     depends_on:
       - grafana
       - node-red
-      - node-red-test
     ports:
       - "80:80"
       - "443:443"
