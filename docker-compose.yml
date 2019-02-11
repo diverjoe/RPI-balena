@@ -85,8 +85,8 @@ services:
     restart: always
   node-red-test:
     build: node-red-test
-     privileged: true
-     network_mode: "host"
+    privileged: true
+    network_mode: "host"
     volumes:
        - 'node-red-test-data:/data'
     ports:
