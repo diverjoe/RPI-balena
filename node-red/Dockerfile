@@ -3,9 +3,10 @@ FROM nodered/node-red-docker:rpi-v8
 # installing an editor
 USER root
 RUN apt-get update && apt-get install nano 
+RUN echo "node-red" > /etc/hostname && hostname -F /etc/hostname
 USER node-red
 
-#RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 RUN npm install node-red-contrib-resinio
 RUN npm install node-red-dashboard
