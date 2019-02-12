@@ -65,6 +65,10 @@ services:
       - 'mqtt-data:/mosquitto'
     ports:
       - "1883:1883"
+  mqtt-test:
+    image: panuwitp/mosquitto-arm
+    ports:
+      - "1884:1883"
   node-red:
     build: node-red
     volumes:
@@ -74,11 +78,21 @@ services:
     depends_on:
         - mqtt
     restart: always
+  node-red-test:
+    build: node-red-test
+    volumes:
+       - 'node-red-test-data:/data'
+    ports:
+       - "1882:1880"
+    depends_on:
+        - mqtt-test
+    restart: always    
   nginx:
     build : nginx
     depends_on:
       - grafana
       - node-red
+      - node-red-test
     ports:
       - "80:80"
       - "443:443"
