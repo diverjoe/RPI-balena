@@ -1,6 +1,7 @@
 version: '2'
 volumes:
     node-red-data:
+    node-red-test-data:
     influxdb-data:
     mqtt-data:
 services:
