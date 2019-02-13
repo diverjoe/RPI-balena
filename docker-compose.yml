@@ -61,7 +61,7 @@ services:
        - influxdb
     restart: always
   mqtt:
-    build: mqtt
+    image: panuwitp/mosquitto-arm
     volumes:
       - 'mqtt-data:/mosquitto'
     ports:
