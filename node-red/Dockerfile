@@ -2,8 +2,11 @@ FROM nodered/node-red-docker:rpi-v8
 
 # installing an editor
 USER root
+ENV TZ=America/Indiana/Indianapolis
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get update && apt-get install nano 
-#RUN echo "node-red" > /etc/hostname && hostname -F /etc/hostname
+RUN echo "node-red" > /etc/hostname && hostname -F /etc/hostname
 RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER node-red
