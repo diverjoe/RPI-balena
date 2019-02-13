@@ -2,11 +2,11 @@ FROM nodered/node-red-docker:rpi-v8
 
 # installing an editor
 USER root
-ENV TZ=America/Indiana/Indianapolis
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+#ENV TZ=America/Indiana/Indianapolis
+#RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt-get install nano 
-RUN echo "node-red" > /etc/hostname && hostname -F /etc/hostname
+#RUN echo "node-red" > /etc/hostname && hostname -F /etc/hostname
 RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER node-red
@@ -25,7 +25,7 @@ RUN npm install node-red-contrib-bme280
 RUN npm install node-red-contrib-esplogin
 RUN npm install node-red-contrib-i2c
 RUN npm install node-red-contrib-interval-length
-RUN npm install node-red-contrib-curve
+#RUN npm install node-red-contrib-curve
 
 COPY ./settings.js /data/settings.js
 #COPY ./flows.json /data/flows.json
