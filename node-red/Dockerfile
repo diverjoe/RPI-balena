@@ -7,7 +7,7 @@ ENV TZ=America/Indiana/Indianapolis
 
 RUN apt-get update && apt-get install nano 
 #RUN echo "node-red" > /etc/hostname && hostname -F /etc/hostname
-RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+#RUN echo "node-red ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER node-red
 
@@ -26,7 +26,7 @@ RUN npm install node-red-contrib-esplogin
 RUN npm install node-red-contrib-i2c
 RUN npm install node-red-contrib-interval-length
 #RUN npm install node-red-contrib-curve
-RUN npm install node-red-contrib-moment
+#RUN npm install node-red-contrib-moment
 
 
 COPY ./settings.js /data/settings.js
