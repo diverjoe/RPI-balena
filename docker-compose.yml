@@ -14,9 +14,17 @@ services:
   samba:
     #  hostname: samba  # doesn't work
     image: dastrasmue/rpi-samba 
-    command:  -u "joe:asdfasdf" -s "node-red-data:/mount/node-red-data:rw:joe"  
+    command:  
+      -u "joe:asdfasdf" 
+      -s "node-red-data:/mount/node-red-data:rw:joe"  
+      -s "node-red-test-data:/mount/node-red-data:rw:joe"
+      -s "influxdb-data:/mount/influxdb-data:rw:joe"
+      -s "mqtt-data:/mount/mqtt-data:rw:joe"
     volumes:
        - 'node-red-data:/mount/node-red-data'
+       - 'node-red-test-data:/mount/node-red-test-data'
+       - 'influxdb-data:/mount/influxdb-data'
+       - 'mqtt-data:/mount/mqtt-data'
     ports:
     #  - "137:137"
     #  - "137:137/udp"
