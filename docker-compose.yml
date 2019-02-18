@@ -17,7 +17,7 @@ services:
     command:  
       -u "joe:asdfasdf" 
       -s "node-red-data:/mount/node-red-data:rw:joe"  
-      -s "node-red-test-data:/mount/node-red-data:rw:joe"
+      -s "node-red-test-data:/mount/node-red-test-data:rw:joe"
       -s "influxdb-data:/mount/influxdb-data:rw:joe"
       -s "mqtt-data:/mount/mqtt-data:rw:joe"
     volumes:
