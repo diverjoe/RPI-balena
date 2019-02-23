@@ -23,7 +23,7 @@ services:
       -s "node-red-test-data:/mount/node-red-test-data:rw:joe"
       -s "influxdb-data:/mount/influxdb-data:rw:joe"
       -s "mqtt-data:/mount/mqtt-data:rw:joe"
-      -s "utsc-data:/mount/grafana-data:rw:joe"
+      -s "grafana-data:/mount/grafana-data:rw:joe"
     volumes:
        - 'utsc-data:/mount/utsc-data'
        - 'node-red-data:/mount/node-red-data'
