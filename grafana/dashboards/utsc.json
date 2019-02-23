@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": null,
   "links": [],
   "panels": [
     {
@@ -189,9 +188,12 @@
       "tableColumn": "",
       "targets": [
         {
+          "$$hashKey": "object:1134",
           "dsType": "influxdb",
           "groupBy": [],
           "measurement": "SensorReadings",
+          "orderByTime": "ASC",
+          "policy": "default",
           "query": "SELECT \"value\" FROM \"SensorReadings\" WHERE \"sensor\" = 'waterLevel' AND \"type\" = 'range' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
@@ -215,7 +217,7 @@
               "condition": "AND",
               "key": "type",
               "operator": "=",
-              "value": "range"
+              "value": "esp"
             }
           ]
         }
@@ -964,7 +966,7 @@
       "decimals": 0,
       "editable": true,
       "error": false,
-      "fill": 0,
+      "fill": 1,
       "grid": {},
       "gridPos": {
         "h": 5,
@@ -1002,6 +1004,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "$$hashKey": "object:1217",
           "alias": "Water Level [[tag_type]]",
           "dsType": "influxdb",
           "groupBy": [
@@ -1362,7 +1365,8 @@
         "min": false,
         "rightSide": false,
         "show": true,
-        "sortDesc": false,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -1766,7 +1770,7 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now/d",
     "to": "now-0s"
   },
   "timepicker": {
@@ -1799,5 +1803,5 @@
   "timezone": "browser",
   "title": "UTSC",
   "uid": "K6HYLTigk",
-  "version": 16
+  "version": 1
 }
