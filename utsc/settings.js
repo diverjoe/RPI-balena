@@ -1,4 +1,4 @@
-/* JVA 2018-11-19 */
+/* JVA 2018-10-28 */
 /**
  * Copyright 2013, 2016 IBM Corp.
  *
@@ -17,7 +17,7 @@
 
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
-//var fs = require("fs");
+var fs = require("fs");
 
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
@@ -53,12 +53,11 @@ module.exports = {
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
-    flowFilePretty: true,
+    //flowFilePretty: true,
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    //userDir: '/home/nol/.node-red/',
-	userDir: '/data/node-red/',
+    userDir: '/data/utsc/',
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
@@ -78,12 +77,12 @@ module.exports = {
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
 		// JVA 2018-11-12: activated httpRoot
-    //httpRoot: '/node-red\',
+    httpRoot: '/utsc',
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    httpStatic: '/data/node-red/static/',
+    httpStatic: '/data/utsc/static/',
 
     // Securing Node-RED
     // -----------------
@@ -178,11 +177,19 @@ module.exports = {
     //paletteCategories: ['subflows', 'input', 'output', 'function', 'social', 'mobile', 'storage', 'analysis', 'advanced'],
    
    editorTheme: {
+		    page: {
+            title: "UTSC"
+            // favicon: "/usr/src/app/assets/favicon.ico"
+        },
+        header: {
+            title: "UTSC",
+            // image: "/usr/src/app/assets/resin_logo.png", // or null to remove image
+            url: ""
+        },
        projects: {
            enabled: true
        }
    },
-
 
     // Configure the logging output
     logging: {
