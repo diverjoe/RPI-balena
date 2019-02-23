@@ -86,10 +86,10 @@ services:
     image: panuwitp/mosquitto-arm
     ports:
       - "1884:1883"
-  node-red:
-    build: node-red
+  utsc:
+    build: utsc
     volumes:
-       - 'node-red-data:/data'
+       - 'utsc-data:/data'
     ports:
        - "1880:1880"
     depends_on:
