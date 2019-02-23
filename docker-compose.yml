@@ -108,7 +108,7 @@ services:
     build : nginx
     depends_on:
       - grafana
-      - node-red
+      - utsc
       - node-red-test
     ports:
       - "80:80"
