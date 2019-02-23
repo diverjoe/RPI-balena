@@ -18,13 +18,13 @@ RUN npm install node-red-contrib-os
 RUN npm install node-red-node-rbe
 RUN npm install node-red-contrib-influxdb
 RUN npm install node-red-contrib-fsm
-RUN npm install node-red-contrib-timerswitch
-RUN npm install node-red-contrib-mytimeout
-RUN npm install node-red-node-smooth
-RUN npm install node-red-contrib-bme280
-RUN npm install node-red-contrib-esplogin
-RUN npm install node-red-contrib-i2c
-RUN npm install node-red-contrib-interval-length
+#RUN npm install node-red-contrib-timerswitch
+#RUN npm install node-red-contrib-mytimeout
+#RUN npm install node-red-node-smooth
+#RUN npm install node-red-contrib-bme280
+#RUN npm install node-red-contrib-esplogin
+#RUN npm install node-red-contrib-i2c
+#RUN npm install node-red-contrib-interval-length
 #RUN npm install node-red-contrib-curve
 #RUN npm install node-red-contrib-moment
 
