@@ -70,7 +70,7 @@ services:
   grafana:
     build: grafana 
     volumes:
-       - 'grafana-data:/data'  
+       - 'grafana-data:/grafana'  
     ports:
        - "3000:3000"
     depends_on:
@@ -89,7 +89,7 @@ services:
   utsc:
     build: utsc
     volumes:
-       - 'utsc-data:/data'
+       - 'utsc-data:/utsc'
     ports:
        - "1880:1880"
     depends_on:
