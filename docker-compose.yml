@@ -4,6 +4,8 @@ volumes:
     node-red-test-data:
     influxdb-data:
     mqtt-data:
+    grafana-data:
+    utsc-data:
 services:
   wifi-connect:
     build: ./wifi-connect
@@ -17,14 +19,18 @@ services:
     command:  
       -u "joe:asdfasdf" 
       -s "node-red-data:/mount/node-red-data:rw:joe"  
+      -s "utsc-data:/mount/utsc-data:rw:joe"  
       -s "node-red-test-data:/mount/node-red-test-data:rw:joe"
       -s "influxdb-data:/mount/influxdb-data:rw:joe"
       -s "mqtt-data:/mount/mqtt-data:rw:joe"
+      -s "utsc-data:/mount/grafana-data:rw:joe"
     volumes:
+       - 'utsc-data:/mount/utsc-data'
        - 'node-red-data:/mount/node-red-data'
        - 'node-red-test-data:/mount/node-red-test-data'
        - 'influxdb-data:/mount/influxdb-data'
        - 'mqtt-data:/mount/mqtt-data'
+       - 'grafana-data:/mount/grafana-data'
     ports:
     #  - "137:137"
     #  - "137:137/udp"
@@ -63,6 +69,8 @@ services:
        - flush_interval=60s
   grafana:
     build: grafana 
+    volumes:
+       - 'grafana-data:/data'  
     ports:
        - "3000:3000"
     depends_on:
