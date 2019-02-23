@@ -9,4 +9,4 @@ RUN npm install node-red-contrib-resinio
 RUN npm install node-red-dashboard
 RUN npm install node-red-contrib-credentials
 
-COPY ./settings.js /data/node-red/settings.js
+COPY ./settings.js /data/utsc/settings.js
