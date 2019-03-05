@@ -1625,7 +1625,7 @@
       "decimals": 0,
       "editable": true,
       "error": false,
-      "fill": 1,
+      "fill": 2,
       "grid": {},
       "gridPos": {
         "h": 17,
@@ -1667,7 +1667,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_sensor]]",
+          "$$hashKey": "object:475",
+          "alias": "[[tag_type]]",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1678,7 +1679,7 @@
             },
             {
               "params": [
-                "sensor"
+                "type"
               ],
               "type": "tag"
             },
@@ -1689,7 +1690,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "Environment",
+          "measurement": "SensorReadings",
           "orderByTime": "ASC",
           "policy": "default",
           "query": "SELECT \"value\" FROM \"SensorReadings\" WHERE \"sensor\" = 'temperature' AND $timeFilter",
@@ -1712,9 +1713,9 @@
           ],
           "tags": [
             {
-              "key": "type",
+              "key": "sensor",
               "operator": "=",
-              "value": "esp"
+              "value": "bme280"
             }
           ]
         }
@@ -1738,6 +1739,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:526",
           "decimals": null,
           "format": "none",
           "label": "",
@@ -1747,6 +1749,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:527",
           "decimals": null,
           "format": "humidity",
           "label": "Humidity",
