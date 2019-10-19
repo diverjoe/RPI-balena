@@ -1,11 +1,10 @@
 version: '2'
 volumes:
     node-red-data:
-    node-red-test-data:
     influxdb-data:
     mqtt-data:
     grafana-data:
-    utsc-data:
+    fishnet-data:
 services:
   wifi-connect:
     build: ./wifi-connect
@@ -19,15 +18,13 @@ services:
     command:  
       -u "joe:asdfasdf" 
       -s "node-red-data:/mount/node-red-data:rw:joe"  
-      -s "utsc-data:/mount/utsc-data:rw:joe"  
-      -s "node-red-test-data:/mount/node-red-test-data:rw:joe"
+      -s "fishnet-data:/mount/fishnet-data:rw:joe"  
       -s "influxdb-data:/mount/influxdb-data:rw:joe"
       -s "mqtt-data:/mount/mqtt-data:rw:joe"
       -s "grafana-data:/mount/grafana-data:rw:joe"
     volumes:
-       - 'utsc-data:/mount/utsc-data'
+       - 'fishnet-data:/mount/fishnet-data'
        - 'node-red-data:/mount/node-red-data'
-       - 'node-red-test-data:/mount/node-red-test-data'
        - 'influxdb-data:/mount/influxdb-data'
        - 'mqtt-data:/mount/mqtt-data'
        - 'grafana-data:/mount/grafana-data'
@@ -82,34 +79,20 @@ services:
       - 'mqtt-data:/mosquitto'
     ports:
       - "1883:1883"
-  mqtt-test:
-    image: panuwitp/mosquitto-arm
-    ports:
-      - "1884:1883"
-  utsc:
-    build: utsc
+  fishnet:
+    build: fishnet
     volumes:
-       - 'utsc-data:/utsc'
+       - 'fishnet-data:/fishnet'
     ports:
        - "1880:1880"
     depends_on:
         - mqtt
     restart: always
-  node-red-test:
-    build: node-red-test
-    volumes:
-       - 'node-red-test-data:/data'
-    ports:
-       - "1882:1880"
-    depends_on:
-        - mqtt-test
-    restart: always    
   nginx:
     build : nginx
     depends_on:
       - grafana
-      - utsc
-      - node-red-test
+      - fishnet
     ports:
       - "80:80"
       - "443:443"
