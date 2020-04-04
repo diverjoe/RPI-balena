@@ -1,6 +1,5 @@
 version: '2'
 volumes:
-    node-red-data:
     influxdb-data:
     mqtt-data:
     grafana-data:
@@ -17,14 +16,12 @@ services:
     image: dastrasmue/rpi-samba 
     command:  
       -u "joe:asdfasdf" 
-      -s "node-red-data:/mount/node-red-data:rw:joe"  
-      -s "fishnet-data:/mount/fishnet-data:rw:joe"  
+      -s "fishnet-data:/mount/fishnet-data:rw:joe"
       -s "influxdb-data:/mount/influxdb-data:rw:joe"
       -s "mqtt-data:/mount/mqtt-data:rw:joe"
       -s "grafana-data:/mount/grafana-data:rw:joe"
     volumes:
        - 'fishnet-data:/mount/fishnet-data'
-       - 'node-red-data:/mount/node-red-data'
        - 'influxdb-data:/mount/influxdb-data'
        - 'mqtt-data:/mount/mqtt-data'
        - 'grafana-data:/mount/grafana-data'
@@ -74,7 +71,7 @@ services:
        - influxdb
     restart: always
   mqtt:
-    image: panuwitp/mosquitto-arm
+    image: arm32v6/eclipse-mosquitto
     volumes:
       - 'mqtt-data:/mosquitto'
     ports:
