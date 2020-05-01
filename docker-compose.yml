@@ -3,7 +3,7 @@ volumes:
     influxdb-data:
     mqtt-data:
     grafana-data:
-    fishnet-data:
+    ae-data:
 services:
  # wifi-connect:
  #   build: ./wifi-connect
@@ -16,12 +16,12 @@ services:
     image: dastrasmue/rpi-samba 
     command:  
       -u "joe:asdfasdf" 
-      -s "fishnet-data:/mount/fishnet-data:rw:joe"
+      -s "ae-data:/mount/ae-data:rw:joe"
       -s "influxdb-data:/mount/influxdb-data:rw:joe"
       -s "mqtt-data:/mount/mqtt-data:rw:joe"
       -s "grafana-data:/mount/grafana-data:rw:joe"
     volumes:
-       - 'fishnet-data:/mount/fishnet-data'
+       - 'ae-data:/mount/ae-data'
        - 'influxdb-data:/mount/influxdb-data'
        - 'mqtt-data:/mount/mqtt-data'
        - 'grafana-data:/mount/grafana-data'
@@ -76,10 +76,10 @@ services:
       - 'mqtt-data:/mosquitto'
     ports:
       - "1883:1883"
-  fishnet:
-    build: fishnet
+  ae:
+    build: ae
     volumes:
-       - 'fishnet-data:/fishnet'
+       - 'ae-data:/ae'
     ports:
        - "1880:1880"
     depends_on:
@@ -89,7 +89,7 @@ services:
     build : nginx
     depends_on:
       - grafana
-      - fishnet
+      - ae
     ports:
       - "80:80"
       - "443:443"
