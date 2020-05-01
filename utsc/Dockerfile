@@ -30,4 +30,4 @@ RUN npm install node-red-node-twitter
 RUN npm install node-red-node-ui-etable
 RUN npm install node-red-node-ui-table
 
-COPY ./settings.js /data/utsc/settings.js
+COPY ./settings.js /data/ae/settings.js
