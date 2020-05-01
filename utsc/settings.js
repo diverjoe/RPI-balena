@@ -57,7 +57,7 @@ module.exports = {
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    userDir: '/data/utsc/',
+    userDir: '/data/ae/',
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
@@ -77,12 +77,12 @@ module.exports = {
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
 		// JVA 2018-11-12: activated httpRoot
-    httpRoot: '/utsc',
+    httpRoot: '/ae',
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    httpStatic: '/data/utsc/static/',
+    httpStatic: '/data/ae/static/',
 
     // Securing Node-RED
     // -----------------
@@ -178,11 +178,11 @@ module.exports = {
    
    editorTheme: {
 		    page: {
-            title: "UTSC"
+            title: "AE"
             // favicon: "/usr/src/app/assets/favicon.ico"
         },
         header: {
-            title: "UTSC",
+            title: "AE",
             // image: "/usr/src/app/assets/resin_logo.png", // or null to remove image
             url: ""
         },
