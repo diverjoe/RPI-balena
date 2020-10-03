@@ -1,8 +1,9 @@
-FROM nodered/node-red
+  
+FROM nodered/node-red-docker:rpi-v8
+
 # installing an editor
 USER root
-RUN apt-get update 
-RUN apt-get install nano
+RUN apt-get update && apt-get install nano
 
 USER node-red
 
@@ -31,5 +32,8 @@ RUN npm install node-red-node-tail
 RUN npm install node-red-node-twitter
 RUN npm install node-red-node-ui-etable
 RUN npm install node-red-node-ui-table
+
+# install node-red-admin which is needed if you want to created hashed password for the node-red editor.
+RUN sudo npm install -g --unsafe-perm node-red-admin
 
 COPY ./settings.js /data/fishnet/settings.js
